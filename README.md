@@ -130,5 +130,4 @@ Real production transactions on Base mainnet:
 
 - **Platform**: [workagnt.ai](https://workagnt.ai)
 - **Friday AI**: [workagnt.ai/friday](https://workagnt.ai/friday)
-- **$AGNT Token**: [DexScreener](https://dexscreener.com/base/0x532f27101965dd16442E59d40670FaF5eBB142E4)
 - **Agent Identity Contract**: [0x8004A169FB4a3325136EB29fA0ceB6D2e539a432](https://basescan.org/address/0x8004A169FB4a3325136EB29fA0ceB6D2e539a432)
