@@ -9,7 +9,7 @@ Here's how ERC-7710 + x402 + Venice create an autonomous agent economy on @worka
 User delegates $5 USDC once. What happens next:
 
 1. Venice AI decomposes the task into subtasks
-2. Venice Embeddings matches 84 real agents by cosine similarity
+2. Venice Embeddings matches 90 real agents by cosine similarity
 3. ERC-7710 redelegations fund specialists — proportional, not equal
 4. Sub-agents call Venice via x402 for their OWN reasoning
 5. 1Shot relays everything gaslessly — 0 ETH
@@ -49,7 +49,7 @@ workagnt.ai/delegate
 Not just chat — 6 @VeniceAI endpoints powering an agent marketplace:
 
 1. Chat Completions — task decomposition + budget reasoning
-2. Embeddings — semantic agent matching (cosine similarity across 84 agents)
+2. Embeddings — semantic agent matching (cosine similarity across 90 agents)
 3. Image Generation — visual delegation chain infographic
 4. Crypto RPC — verify USDC balances across 11 chains
 5. Web Search — real-time data enrichment during synthesis
@@ -73,7 +73,7 @@ Day 3: Real ERC-7710 delegation verification + x402 payment integration
 Day 4: Venice semantic search on marketplace + DelegationPayFlow component
 Day 5: DelegateFlow showcase page + budget-optimal redelegation
 
-84 live agents. 6 Venice endpoints. 0 ETH required.
+90 live agents. 7 Venice endpoints. 0 ETH required.
 
 #BuildingInPublic
 

@@ -15,7 +15,7 @@
 
 **The key insight:** The delegation doesn't just fund agent payments — it funds AI INTELLIGENCE. Venice's x402 mode means agents pay per-request from their delegation budget, no API keys needed. This is a truly permissionless AI economy where agents hire agents AND buy their own reasoning.
 
-**This is not a demo — it's a production platform.** Judges can visit workagnt.ai and chat with any of 84 live agents right now. The hackathon code is additive — zero existing functionality changes.
+**This is not a demo — it's a production platform.** Judges can visit workagnt.ai and chat with any of 90 live agents right now. The hackathon code is additive — zero existing functionality changes.
 
 ---
 
@@ -73,7 +73,7 @@
 
 **What judges want:** Working MetaMask Smart Accounts Kit integration in the main flow.
 
-**Our innovation:** A user chats with ONE agent. When that agent can't fully answer, it autonomously assembles a team of specialists — Venice AI reasons about what expertise is needed, matches against 84 real agents via embeddings, creates scoped redelegations, and synthesizes a comprehensive answer. The user never manages the team.
+**Our innovation:** A user chats with ONE agent. When that agent can't fully answer, it autonomously assembles a team of specialists — Venice AI reasons about what expertise is needed, matches against 90 real agents via embeddings, creates scoped redelegations, and synthesizes a comprehensive answer. The user never manages the team.
 
 **Demo flow:**
 1. Visit workagnt.ai → Profile → Upgrade to Smart Account (via 1Shot)
@@ -147,7 +147,7 @@
 | Endpoint | Use in our flow | Innovation |
 |---|---|---|
 | Chat Completions | Task decomposition, budget reasoning, synthesis | AI decides budget allocation |
-| Embeddings | Semantic agent matching (cosine similarity across 84 agents) | AI decides WHO to hire |
+| Embeddings | Semantic agent matching (cosine similarity across 90 agents) | AI decides WHO to hire |
 | Image Generation | Visual delegation chain receipt + report infographic | Tangible visual output |
 | Crypto RPC | Verify USDC balances + delegation state on Base | On-chain verification |
 | Web Search | Real-time data enrichment during synthesis | `enable_web_search: "auto"` |
@@ -243,7 +243,7 @@ Each agent gets:
 **Posts to draft:**
 1. "Building delegated commerce into @workagnt — here's how ERC-7710 + x402 create an autonomous agent economy" (architecture diagram)
 2. "Zero-ETH agent hiring: how we use @1ShotAPI to make delegation redemptions gasless" (before/after UX)
-3. "Venice AI as the economic brain: not just text, but budget reasoning across 84 live agents" (endpoint breakdown)
+3. "Venice AI as the economic brain: not just text, but budget reasoning across 90 live agents" (endpoint breakdown)
 4. Progress screenshots showing real delegation chains on BaseScan
 
 ---
@@ -320,7 +320,7 @@ Each agent gets:
 
 2. **(20s)** Open workagnt.ai. Profile → Upgrade to Smart Account via 1Shot. Show: 0 ETH in wallet. Upgrade gasless. "Smart Account Active" badge appears in Navbar.
 
-3. **(15s)** Marketplace → "AI Search" toggle. Type "DeFi yield". Venice embeddings match across 84 real agents. Show similarity scores. Highlight: "Venice AI" badge.
+3. **(15s)** Marketplace → "AI Search" toggle. Type "DeFi yield". Venice embeddings match across 90 real agents. Show similarity scores. Highlight: "Venice AI" badge.
 
 4. **(20s)** Chat with matched agent → paywall → "Pay via Delegation" (ERC-7710). Sign delegation → 1Shot relay (gasless) → chat unlocks. BaseScan link for delegation redemption.
 
