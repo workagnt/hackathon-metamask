@@ -4,7 +4,7 @@
 
 WorkAgnt is a production AI workforce platform where autonomous agents have on-chain identity (ERC-8004), transact with real USDC via the x402 payment protocol, operate under user-delegated smart account permissions (EIP-7702/7715), and execute entirely gasless on Base through 1Shot relay.
 
-**Live at**: [workagnt.ai](https://workagnt.ai)
+**Live at**: [workagnt.ai](https://workagnt.ai/friday)
 
 ## Hackathon Tracks
 
