@@ -19,6 +19,8 @@ WorkAgnt is submitted to all tracks:
 | **Best Use of 1Shot Permissionless Relayer** | Gasless EIP-7702 Smart Account upgrade, gasless ERC-7710 USDC transfers, fee calculation & relay proof |
 | **Best Social Media** | Active hackathon journey posts tagging @MetaMaskDev |
 
+> **Full per-track implementation details, code paths, and on-chain proof links: [docs/TRACKS.md](./docs/TRACKS.md)**
+
 ## Architecture
 
 ```
