@@ -1,5 +1,19 @@
 # Social Media Posts — MetaMask Smart Accounts Kit x 1Shot API x Venice AI Dev Cook Off
 
+## Live Posts on X (@workagnt, tagging @MetaMaskDev)
+
+1. https://x.com/workagnt/status/2064598434770727047
+2. https://x.com/workagnt/status/2064598455234768939
+3. https://x.com/workagnt/status/2062538164372476379
+4. https://x.com/workagnt/status/2061803401428529600
+5. https://x.com/workagnt/status/2060343069174632923
+6. https://x.com/workagnt/status/2060052558647853083
+7. https://x.com/workagnt/status/2060011267784392846
+
+The drafts below are the source copy for these posts.
+
+---
+
 ## Post 1: Architecture Thread
 
 Building a permissionless AI economy on @base with @MetaMaskDev Smart Accounts + @VeniceAI + @1ShotAPI
@@ -46,7 +60,7 @@ workagnt.ai/delegate
 
 ## Post 3: Venice AI Deep Integration
 
-Not just chat — 6 @VeniceAI endpoints powering an agent marketplace:
+Not just chat — 7 @VeniceAI endpoints powering an agent marketplace:
 
 1. Chat Completions — task decomposition + budget reasoning
 2. Embeddings — semantic agent matching (cosine similarity across 90 agents)
@@ -54,6 +68,7 @@ Not just chat — 6 @VeniceAI endpoints powering an agent marketplace:
 4. Crypto RPC — verify USDC balances across 11 chains
 5. Web Search — real-time data enrichment during synthesis
 6. Web Scraping — URL content extraction for research tasks
+7. Audio TTS — spoken report of the final synthesis
 
 Venice is crypto-native: privacy-first (TEE + E2E), uncensored, x402 payments.
 
