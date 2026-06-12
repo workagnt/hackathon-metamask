@@ -1,23 +1,3 @@
-/**
- * useDelegation — ERC-7710 Delegation & Redelegation Hook (WorkAgnt Hackathon)
- *
- * Handles delegation creation and A2A redelegation:
- *
- *   create() — Creates a root delegation from user to Friday AI
- *     - Uses createDelegation() from @metamask/smart-accounts-kit
- *     - Scope: ScopeType.Erc20TransferAmount (USDC on Base)
- *     - maxAmount: user-specified USDC cap
- *
- *   createRedelegation() — Creates child delegation from Friday to a sub-agent
- *     - Takes parentDelegation as input (the root delegation)
- *     - Delegates a subset of the parent's allowance to the sub-agent
- *     - This is how A2A coordination works: Friday redelegates budget per agent
- *
- * The delegation chain: User → Friday AI → Sub-Agent (Alexi Auditor, etc.)
- * Each level has a reduced scope — sub-agents can only spend what Friday allocates.
- *
- * @see VERIFICATION.md for judge verification steps
- */
 import { useState, useCallback } from 'react'
 import { parseUnits, type Address, type Hex } from 'viem'
 import {

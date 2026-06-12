@@ -1,23 +1,3 @@
-/**
- * Venice AI Integration — WorkAgnt Hackathon Submission
- *
- * Dual-path architecture: x402 wallet payment (primary) + API key (fallback).
- *
- * x402 flow: VeniceClient pays Venice directly with USDC on Base — no API key needed.
- * If x402 fails (insufficient balance, network issues), falls back to API key seamlessly.
- *
- * Venice endpoints used:
- *   - Chat completions (Qwen3-6-27B): task decomposition, budget reasoning, report synthesis
- *   - Embeddings (text-embedding-3-large): agent matching via cosine similarity
- *   - Image generation (flux-dev): report infographics
- *   - Crypto RPC: Base chain data access
- *   - Audio TTS (tts-kokoro): voice output
- *
- * x402 cost tracking: veniceX402Balance() checks wallet before/after orchestration flow
- * to compute exact USDC spent via x402, shown to user in the results UI.
- *
- * @see VERIFICATION.md for judge verification steps
- */
 import OpenAI from 'openai'
 import { VeniceClient as VeniceX402Client } from 'venice-x402-client'
 

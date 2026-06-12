@@ -1,33 +1,3 @@
-/**
- * useSmartAccount — MetaMask Smart Account Hook (WorkAgnt Hackathon)
- *
- * This hook manages the full MetaMask Smart Account lifecycle:
- *
- *   1. EIP-7702 UPGRADE (line ~129-199):
- *      - Creates smart account via toMetaMaskSmartAccount() with Implementation.Stateless7702
- *      - Checks if account already has code (eth_getCode)
- *      - If not upgraded: signs EIP-7702 authorization via walletClient.signAuthorization()
- *      - Sends authorization to server → 1Shot relay7702Authorization() → gasless upgrade
- *      - Polls for confirmation (up to 20 attempts, 2s intervals)
- *
- *   2. EIP-7715 PERMISSION GRANT (line ~203-241):
- *      - Extends walletClient with erc7715ProviderActions()
- *      - Calls requestExecutionPermissions() with:
- *        - type: 'erc20-token-allowance'
- *        - allowanceAmount: user-specified USDC cap (6 decimals)
- *        - tokenAddress: Base USDC (0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913)
- *        - justification: human-readable spending explanation
- *        - to: 1Shot relayer target address
- *        - expiry: 24 hours
- *      - Decodes returned context via decodeDelegations()
- *
- *   3. ERC-7710 RELAY EXECUTION (line ~263-367):
- *      - estimate7710 → pre-validate bundle with 1Shot
- *      - send7710 → submit ERC-7710 delegation bundle
- *      - Poll for confirmation with status updates
- *
- * @see VERIFICATION.md for judge verification steps
- */
 import { useState, useCallback, useRef } from 'react'
 import { createPublicClient, createWalletClient, custom, http, parseUnits, type Address, type Hex } from 'viem'
 import { base } from 'viem/chains'

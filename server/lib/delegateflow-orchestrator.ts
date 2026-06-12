@@ -1,33 +1,3 @@
-/**
- * DelegateFlow Orchestrator (Friday AI) — WorkAgnt Hackathon Submission
- *
- * This is the core autonomous agent orchestrator. When a user delegates a task
- * with a USDC budget, Friday AI executes this pipeline:
- *
- *   1. TASK ANALYSIS — Venice AI decomposes the task into subtasks (chat, x402/API key)
- *   2. AGENT MATCHING — Venice AI embeddings + cosine similarity score agents
- *   3. BUDGET REASONING — Venice AI allocates proportional budgets per complexity
- *   4. RELAY PHASE — 1Shot relays ERC-7710 USDC payments to each agent (gasless)
- *      - Constructs ERC-20 transfer calldata (0xa9059cbb)
- *      - Includes fee payment to 1Shot collector
- *      - Submits via relayer_send7710Transaction
- *      - Polls/webhooks for on-chain confirmation
- *   5. x402 VERIFICATION — Each agent's x402 endpoint verifies the prior on-chain TX
- *      - POST without payment → HTTP 402
- *      - Parse Payment-Required header
- *      - Retry with X-Payment (ERC-7710 delegation) + X-Prior-Payment (TX hash)
- *      - Agent verifies TX on-chain, unlocks response
- *   6. SYNTHESIS — Venice AI combines all agent responses into final report
- *   7. PROOF TRAIL — Every step emitted as proof event (on-chain + off-chain)
- *
- * Venice x402 cost tracking: balance checked before/after flow to compute exact spend.
- * Budget guard: pre-relay validation ensures allocations + fees never exceed user's budget.
- *
- * Integrations touched: MetaMask (ERC-7710 delegation), Venice AI (x402 + API key),
- * 1Shot (gasless relay), x402 protocol (payment verification).
- *
- * @see VERIFICATION.md for judge verification steps
- */
 import { veniceChat, veniceEmbed, veniceImageGenerate, cosineSimilarity, veniceX402Balance } from './venice-ai.js'
 import { createRedelegation, markRedeemed, getDelegationChain, getDelegation } from './delegation-manager.js'
 import { relaySend7710Transaction, getFeeData, pollAndUpdateTask, storeRelayTask, getRelayTask } from './oneshot-relayer.js'

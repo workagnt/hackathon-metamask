@@ -1,29 +1,6 @@
-/**
- * x402 Payment Protocol — WorkAgnt Hackathon Submission
- *
- * Implements the buyer-side x402 payment flow for agent-to-agent payments.
- * Compatible with @metamask/x402 ERC-7710 delegation payment format.
- *
- * The x402 flow (per agent):
- *   1. POST to agent endpoint without payment headers
- *   2. Agent responds with HTTP 402 + Payment-Required header (base64 JSON with accepts[])
- *   3. Parse accepts[0] to get payTo address, amount, network
- *   4. Build X-Payment header with ERC-7710 delegation context:
- *      - delegationManager address
- *      - permissionContext (encoded delegation chain from MetaMask)
- *      - delegator address
- *   5. Retry POST with X-Payment + X-Prior-Payment (1Shot TX hash proving on-chain payment)
- *   6. Agent verifies the prior TX on BaseScan, confirms payment, unlocks response
- *
- * This avoids double-charging: 1Shot already paid the agent on-chain (step 4 in orchestrator),
- * the x402 verification just proves it happened. The agent checks the TX, not a new payment.
- *
- * Settlement: 1Shot relay (on-chain, gasless)
- * Verification: Prior on-chain TX hash passed as X-Prior-Payment header
- * Facilitator: MetaMask x402 facilitator format
- *
- * @see VERIFICATION.md for judge verification steps
- */
+// Reusable buyer-side x402 payment service for WorkAgnt
+// Compatible with @metamask/x402 ERC-7710 delegation payment format
+// Settlement: 1Shot relay (on-chain) via OneShotX402Facilitator. Verification: x402 prior-payment or facilitator.
 
 export interface X402PaymentResult {
   success: boolean

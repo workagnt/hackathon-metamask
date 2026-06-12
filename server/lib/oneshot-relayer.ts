@@ -1,30 +1,3 @@
-/**
- * 1Shot Gasless Relay — WorkAgnt Hackathon Submission
- *
- * All on-chain transactions on WorkAgnt are gasless — users never need ETH.
- * 1Shot's permissionless relayer sponsors gas and accepts payment in USDC.
- *
- * Two relay modes:
- *   1. relayer_sendTransaction — Simple relay with optional EIP-7702 authorizationList
- *      Used for: Smart Account upgrade (EOA → 7702 smart account)
- *
- *   2. relayer_send7710Transaction — ERC-7710 delegation bundle relay
- *      Used for: Agent payments via delegated USDC transfers
- *      Bundle contains: [fee payment to 1Shot, USDC transfer to agent]
- *
- * Flow:
- *   getFeeData() → get gas price, minFee, context (USDC fee authorization)
- *   estimate7710Transaction() → pre-validate bundle before submitting
- *   relaySend7710Transaction() → submit bundle, receive taskId
- *   getRelayStatusSingle() / pollAndUpdateTask() → poll until confirmed
- *
- * Relay tasks stored in memory + DB for webhook/polling reconciliation.
- * 1Shot pushes status updates to our webhook endpoint (/relay/webhook).
- *
- * On-chain proof: Every relay TX is verifiable on BaseScan with 0 ETH value.
- *
- * @see VERIFICATION.md for judge verification steps
- */
 import { db, schema } from '../db/index.js'
 import { eq } from 'drizzle-orm'
 import { OneShotClient } from '@1shotapi/client-sdk'

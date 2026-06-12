@@ -1,24 +1,3 @@
-/**
- * DelegateFlow Routes — WorkAgnt Hackathon Submission
- *
- * Express routes that tie together all three hackathon integrations:
- *
- * POST /delegation          — Store signed MetaMask delegation (EIP-7715 permission)
- * POST /start/stream        — Run full DelegateFlow with real-time SSE streaming
- * POST /relay/7702          — Proxy EIP-7702 Smart Account upgrade to 1Shot
- * POST /relay/send7710      — Proxy ERC-7710 delegation bundle to 1Shot
- * POST /relay/estimate7710  — Pre-validate delegation bundle via 1Shot
- * POST /relay/webhook       — Receive 1Shot webhook for TX confirmation
- * GET  /relay/status/:id    — Poll relay task status
- * GET  /relay/fee           — Get 1Shot fee data (USDC gas abstraction)
- * GET  /relay/capabilities  — Get 1Shot relayer capabilities
- * POST /venice/chat         — Proxy Venice AI chat request
- *
- * Security: Auth middleware (Privy JWT), rate limiting, input validation,
- * delegation locking (prevents double-spend), stream limits per IP.
- *
- * @see VERIFICATION.md for judge verification steps
- */
 import { Router, type Request, type Response } from 'express'
 import { storeDelegation, getDelegation, getDelegationChain, getAllDelegations, revokeDelegation, type DelegationRecord } from '../lib/delegation-manager.js'
 import { startDelegateFlow, getFlowRun, type FlowStep } from '../lib/delegateflow-orchestrator.js'
